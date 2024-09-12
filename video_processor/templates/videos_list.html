@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video List</title>
+</head>
+<body>
+    <h1>Uploaded Videos</h1>
+    <ul>
+        {% for video in videos %}
+            <li>
+                <video controls>
+                    <source src="{{ video.video_file.url }}" type="video/mp4">
+                    <track kind="subtitles" src="data:text/vtt,{{ video.subtitle_file }}">
+                </video>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
